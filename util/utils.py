@@ -17,10 +17,10 @@ def risk_color(risk):
     return colored(risk,"red",attrs=['blink'])
 
 def banner_start():
-    print(colored('Master librarian v0.1 \n',"yellow")+' Tool to search public vulnerabilities on local libraries\nby CoolerVoid\nSearch pitfalls in operational system local packages\n')
+    print(colored('Master librarian v0.2 \n',"yellow")+' Tool to search public vulnerabilities on local libraries\nby CoolerVoid\nSearch pitfalls in operational system local packages\n')
 
 def banner():
-    print(colored('Master librarian v0.1 \n',"yellow")+' Tool to search public vulnerabilities on local libraries\nby CoolerVoid')
+    print(colored('Master librarian v0.2 \n',"yellow")+' Tool to search public vulnerabilities on local libraries\nby CoolerVoid')
     print("\nExample: \n\t$ python3 master_librarian.py -t csv\n\t$ python3 master_librarian.py -t txt\n")
 
 def parser_response_csv(content,limit,csv_str):
