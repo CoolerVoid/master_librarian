@@ -6,12 +6,6 @@ import xml.etree.ElementTree as treant
 
 warnings.simplefilter("ignore")
 
-def containsNumber(value):
- for character in value:
-  if character.isdigit():
-   return True
- return False
-
 def risk_color(risk):
   if "LOW" in risk:
     return colored(risk,"green")
