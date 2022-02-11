@@ -10,6 +10,7 @@ $ sudo python3 -m pip install -r requirements.txt
 
 Example:
 ```
+$ python3 master_librarian.py -t txt
 Master librarian v0.1 
  Tool to search public vulnerabilities on local libraries
 by CoolerVoid
@@ -21,6 +22,7 @@ Example:
 Master librarian v0.1 
  Tool to search public vulnerabilities on local libraries
 by CoolerVoid
+
 Search pitfalls in operational system local packages
 
 xres 1.2.0
