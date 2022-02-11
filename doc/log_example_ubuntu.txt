@@ -86,19 +86,6 @@ presentproto 1.2
 gdk-pixbuf-2.0 2.40.0
 inputproto 2.3.2
 libssl 1.1.1f
-xt 1.1.5
-		An issue was discovered in the POP3 component of Courier Mail Server before 1.1.5. Meddler-in-the-middle attackers can pipeline commands after the POP3 STLS command, injecting plaintext commands into an encrypted user session.
-		https://nvd.nist.gov/vuln/detail/CVE-2021-38084
-		6.8 MEDIUM
-
-		An Arbitrary File Upload vulnerability was discovered in the Golo Laravel theme v 1.1.5.
-		https://nvd.nist.gov/vuln/detail/CVE-2020-23790
-		7.5 HIGH
-
-		A vulnerability in Apache Flink (1.1.0 to 1.1.5, 1.2.0 to 1.2.1, 1.3.0 to 1.3.3, 1.4.0 to 1.4.2, 1.5.0 to 1.5.6, 1.6.0 to 1.6.4, 1.7.0 to 1.7.2, 1.8.0 to 1.8.3, 1.9.0 to 1.9.2, 1.10.0) where, when running a process with an enabled JMXReporter, with a port configured via metrics.reporter.reporter_name>.port, an attacker with local access to the machine and JMX port can execute a man-in-the-middle attack using a specially crafted request to rebind the JMXRMI registry to one under the attacker's control. This compromises any connection established to the process via JMX, allowing extraction of credentials and any other transferred data.
-		https://nvd.nist.gov/vuln/detail/CVE-2020-1960
-		1.9 LOW
-
 xcb-shm 1.14
 gdk-2.0 2.24.32
 libpng16 1.6.37
@@ -122,11 +109,6 @@ blkid 2.34.0
 libsepol 3.0
 libevent_openssl 2.1.11-stable
 uuid 2.34.0
-xau 1.0.9
-		Stack-based buffer overflow in the get_internal_addresses function in the pluto application for Openswan 1.x before 1.0.9, and Openswan 2.x before 2.3.0, when compiled with XAUTH and PAM enabled, allows remote authenticated attackers to execute arbitrary code.
-		https://nvd.nist.gov/vuln/detail/CVE-2005-0162
-		7.2 HIGH
-
 gmodule-2.0 2.64.6
 graphite2 3.0.1
 libfl 2.6.4
