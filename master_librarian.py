@@ -2,6 +2,7 @@ import os
 import argparse
 from util import utils
 import subprocess
+import shlex
 
 def arguments():
     parser = argparse.ArgumentParser(description = utils.banner())
@@ -20,7 +21,7 @@ for elem in pkgs:
     tmp=elem.decode()
     words=tmp.split(' ')
     pkg_name=str(words[0])
-    output=subprocess.check_output([cmd,"--print-provides",pkg_name])
+    output=subprocess.check_output([cmd,"--print-provides",shlex.quote(pkg_name)])
     tmp=str(output.decode())
     tmp=tmp.replace("= ","")
     tmp=tmp.replace("\n","")
