@@ -10,21 +10,29 @@ def arguments():
     args = parser.parse_args()
     return args.types
 
-types = arguments()
-cmd="/usr/bin/pkg-config"
-output=subprocess.check_output([cmd,"--list-all"])
-pkgs = output.splitlines()
+def start_librarian():
+    types = arguments()
+    cmd="/usr/bin/pkg-config"
+    output=subprocess.check_output([cmd,"--list-all"])
+    pkgs = output.splitlines()
+    utils.banner_start()
 
-utils.banner_start()
+    for elem in pkgs:
+        tmp=elem.decode()
+        words=tmp.split(' ')
+        pkg_name=str(words[0])
+        output=subprocess.check_output([cmd,"--print-provides",shlex.quote(pkg_name)])
+        tmp=str(output.decode())
+        tmp=tmp.replace("= ","")
+        tmp=tmp.replace("\n","")
+        utils.search_nist(tmp,3,types)
 
-for elem in pkgs:
-    tmp=elem.decode()
-    words=tmp.split(' ')
-    pkg_name=str(words[0])
-    output=subprocess.check_output([cmd,"--print-provides",shlex.quote(pkg_name)])
-    tmp=str(output.decode())
-    tmp=tmp.replace("= ","")
-    tmp=tmp.replace("\n","")
-    utils.search_nist(tmp,3,types)
+def main():
+    try:
+        start_librarian()
+    except Exception as e:
+        print(" log error : "+str(e))
+        exit(0)
 
-    
+if __name__=="__main__":
+    main()
