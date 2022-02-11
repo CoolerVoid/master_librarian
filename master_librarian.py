@@ -3,6 +3,7 @@ import argparse
 from util import utils
 import subprocess
 import shlex
+import time
 
 def arguments():
     parser = argparse.ArgumentParser(description = utils.banner())
@@ -16,6 +17,7 @@ def start_librarian():
     output=subprocess.check_output([cmd,"--list-all"])
     pkgs = output.splitlines()
     utils.banner_start()
+    counter=0
 
     for elem in pkgs:
         tmp=elem.decode()
@@ -26,6 +28,10 @@ def start_librarian():
         tmp=tmp.replace("= ","")
         tmp=tmp.replace("\n","")
         utils.search_nist(tmp,3,types)
+        if counter == 3:
+            time.sleep(3)
+            counter=0
+        counter+=1
 
 def main():
     try:
