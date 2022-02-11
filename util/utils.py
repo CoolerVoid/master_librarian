@@ -33,8 +33,12 @@ def parser_response_csv(content,limit,csv_str):
         if limit > len(desc):
             maxLimit = len(desc)
         for i in range(0,maxLimit):
-            url =("https://nvd.nist.gov/vuln/detail/"+cve[i].text)
-            print(csv_str+'|'+str(cve[i].text)+"|"+url+"|"+str(score[i].text)+"|"+str(desc[i].text) )
+            with open('master_librarian.csv', 'a+') as f:
+                url =("https://nvd.nist.gov/vuln/detail/"+cve[i].text)
+                row = (csv_str+','+str(cve[i].text)+","+url+","+str(score[i].text)+","+str(desc[i].text))
+                f.write(row+"\n")
+                print(row)
+                
                                                                                                     
 
 def parser_response(content,limit):
