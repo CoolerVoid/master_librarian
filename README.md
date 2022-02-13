@@ -7,19 +7,44 @@ To install requirements:
 ```
 $ sudo python3 -m pip install -r requirements.txt
 ```
-
-Example:
+Overview:
 ```
-$ python3 master_librarian.py -t txt
-Master librarian v0.1 
+$ python3 master_librarian.py -h
+Master librarian v0.3 
  Tool to search public vulnerabilities on local libraries
 by CoolerVoid
 
 Example: 
 	$ python3 master_librarian.py -t csv
-	$ python3 master_librarian.py -t txt
+	$ python3 master_librarian.py -t txt -l 3
 
-Master librarian v0.1 
+usage: master_librarian.py [-h] -t TYPES [-l LIMIT]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -t TYPES, --type TYPES
+                        Name of output type for logs(txt or csv)
+  -l LIMIT, --limit LIMIT
+                        Limit CVEs per pages in nvd NIST search(default is 3)
+
+```
+
+
+Example:
+```
+$ python3 master_librarian.py -t txt
+```
+output
+```
+Master librarian v0.3
+ Tool to search public vulnerabilities on local libraries
+by CoolerVoid
+
+Example: 
+	$ python3 master_librarian.py -t csv
+	$ python3 master_librarian.py -t txt -l 3
+
+Master librarian v0.3
  Tool to search public vulnerabilities on local libraries
 by CoolerVoid
 
