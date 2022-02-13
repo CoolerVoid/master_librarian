@@ -1,7 +1,7 @@
 # master_librarian
 <img align="center" src="https://github.com/CoolerVoid/master_librarian/blob/main/doc/castlevania-symphony-of-the-night-alucard-librarian.jpg?raw=true">
 
-A simple tool to audit Linux system libraries to find public security vulnerabilities.
+A simple tool to audit Unix/*BSD/Linux system libraries to find public security vulnerabilities.
 
 To install requirements:
 ```
