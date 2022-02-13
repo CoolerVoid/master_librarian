@@ -8,16 +8,16 @@ import time
 def arguments():
     parser = argparse.ArgumentParser(description = utils.banner())
     parser.add_argument('-t', '--type', action = 'store', dest = 'types',default='txt',required = True, help = 'Name of output type for logs(txt or csv)')
+    parser.add_argument('-l', '--limit', action = 'store', dest = 'limit',default='3',required = False, help = 'Limit CVEs per pages in nvd NIST search(default is 3)')
     args = parser.parse_args()
-    return args.types
+    return args.types,args.limit
 
 def start_librarian():
-    types = arguments()
+    types,limit = arguments()
     cmd="/usr/bin/pkg-config"
     output=subprocess.check_output([cmd,"--list-all"])
     pkgs = output.splitlines()
     utils.banner_start()
-    counter=0
 
     for elem in pkgs:
         tmp=elem.decode()
@@ -27,11 +27,9 @@ def start_librarian():
         tmp=str(output.decode())
         tmp=tmp.replace("= ","")
         tmp=tmp.replace("\n","")
-        utils.search_nist(tmp,3,types)
-        if counter == 3:
-            time.sleep(3)
-            counter=0
-        counter+=1
+        utils.search_nist(tmp,types,limit)
+    if "csv" in types:
+        print("Please look the CSV logs in file librarian_log.csv")
 
 def main():
     try:
