@@ -224,3 +224,5 @@ xft 2.3.3
 ```
 
 Tested in Ubuntu Linux, Fedora Linux and FreeBSD.
+
+The purpose of this tool is to use in local pentest, take attention if you have a proper authorization before to use that. I do not have responsibility for your actions. You can use a hammer to construct a house or destroy it, choose the law path, don't be a bad guy, remember.
