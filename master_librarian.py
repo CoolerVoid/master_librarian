@@ -29,7 +29,7 @@ def start_librarian():
         tmp=tmp.replace("\n","")
         utils.search_nist(tmp,types,limit)
     if "csv" in types:
-        print("Please look the CSV logs in file librarian_log.csv")
+        print("\n\t Please look the CSV logs in file librarian_log.csv")
 
 def main():
     try:
